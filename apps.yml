@@ -1,4 +1,4 @@
-#6:28
+#6:38
 ---
 - name: Software Install
   hosts: localhost
@@ -575,8 +575,8 @@
         update: yes
     - name: get winPEAS
       git:
-        repo: https://github.com/carlospolop/PEASS-ng/tree/master/winPEAS
-        dest: /opt/winPEAS
+        repo: https://github.com/carlospolop/PEASS-ng
+        dest: /opt/PEASS-ng
         update: yes
     - name: get Wordlists ZephrFish
       git:
