@@ -1,0 +1,22 @@
+---
+- name: Firewall Setup
+  hosts: localhost
+  connection: local
+  become: true
+  gather_facts: true 
+  tasks:
+#    - name: Test local action, uncomment to test
+#      command: echo "hello world"
+      
+#    - debug:
+#        msg: "I am connecting to {{ ansible_nodename }} which is running {{ ansible_distribution }} {{ ansible_distribution_version }}"
+
+#    - name: Show facts available on the system
+#      ansible.builtin.debug:
+#        var: ansible_facts
+        
+    - name: get aquatone
+      git:
+        repo: https://github.com/michenriksen/aquatone
+        dest: /opt/aquatone
+        update: yes     
