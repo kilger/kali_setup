@@ -1,0 +1,599 @@
+---
+- name: Software Install
+  hosts: localhost
+  connection: local
+  become: true
+  gather_facts: true 
+  tasks:
+#    - name: Test local action, uncomment to test
+#      command: echo "hello world"
+      
+#    - debug:
+#        msg: "I am connecting to {{ ansible_nodename }} which is running {{ ansible_distribution }} {{ ansible_distribution_version }}"
+
+#    - name: Show facts available on the system
+#      ansible.builtin.debug:
+#        var: ansible_facts
+        
+    - name: get aquatone
+      git:
+        repo: https://github.com/michenriksen/aquatone
+        dest: /opt/aquatone
+        update: yes        
+        
+#ver 2021/11/19.0
+#A:
+    - name: get aquatone
+      git:
+        repo: https://github.com/michenriksen/aquatone
+        dest: /opt/aquatone
+        update: yes
+    - name: get asn
+      git:
+        repo: https://github.com/nitefood/asn
+        dest: /opt/asn
+        update: yes
+    - name: get asnlookup
+      git:
+        repo: https://github.com/yassineaboukir/asnlookup
+        dest: /opt/asnlookup
+        update: yes
+    - name: get autoenum
+      git:
+        repo: https://github.com/Gr1mmie/autoenum
+        dest: /opt/autoenum
+        update: yes
+    - name: get AutoRecon
+      git:
+        repo: https://github.com/Tib3rius/AutoRecon
+        dest: /opt/AutoRecon
+        update: yes
+    - name: get avet
+      git:
+        repo: https://github.com/govolution/avet
+        dest: /opt/avet
+        update: yes
+
+#B:
+    - name: get BloodHound
+      git:
+        repo: https://github.com/porterhau5/BloodHound
+        dest: /opt/BloodHound
+        update: yes
+    - name: get BloodHound-Owned
+      git:
+        repo: https://github.com/porterhau5/BloodHound-Owned
+        dest: /opt/BloodHound-Owned
+        update: yes
+    - name: get brutespray
+      git:
+        repo: https://github.com/x90skysn3k/brutespray
+        dest: /opt/brutespray
+        update: yes
+
+#C:
+    - name: get certspotter
+      git:
+        repo: https://github.com/SSLMate/certspotter
+        dest: /opt/certspotter
+        update: yes
+    - name: get CeWL
+      git:
+        repo: https://github.com/digininja/CeWL
+        dest: /opt/CeWL
+        update: yes
+    - name: get CloudBrute
+      git:
+        repo: https://github.com/jhaddix/CloudBrute
+        dest: /opt/CloudBrute
+        update: yes
+    - name: get cook
+      git: 
+        repo: https://github.com/giteshnxtlvl/cook
+        dest: /opt/cook
+        update: yes
+    - name: get Covenant
+      git:
+        repo: https://github.com/ZeroPointSecurity/Covenant
+        dest: /opt/<repo>
+        update: yes
+    - name: get crtndstry
+      git:
+        repo: https://github.com/nahamsec/crtndstry
+        dest: /opt/crtndstry
+        update: yes
+
+#D:
+    - name: get dirsearch
+      git:
+        repo: https://github.com/maurosoria/dirsearch
+        dest: /opt/dirsearch
+        update: yes
+
+    - name: get discover
+      git:
+        repo: https://github.com/leebaird/discover
+        dest: /opt/discover
+        update: yes
+    - name: get dnsdumpster
+      git:
+        repo: https://github.com/wangoloj/dnsdumpster
+        dest: /opt/dnsdumpster
+        update: yes
+    - name: get duplicut
+      git: 
+        repo: https://github.com/nil0x42/duplicut
+        dest: /opt/duplicut
+        update: yes
+
+#E:
+    - name: get easysploit
+      git:
+        repo: https://github.com/KALILINUXTRICKSYT/easysploit
+        dest: /opt/easysploit
+        update: yes
+    - name: get enum4linux-ng
+      git:
+        repo: https://github.com/cddmp/enum4linux-ng
+        dest: /opt/enum4linux-ng
+        update: yes
+    - name: get evilportals
+      git:
+        repo: https://github.com/kbeflo/evilportals
+        dest: /opt/evilportals
+        update: yes
+    - name: get exe2hex 
+      git:
+        repo: https://github.com/g0tmi1k/exe2hex 
+        dest: /opt/exe2hex 
+        update: yes
+
+#F:
+    - name: get feroxbuster
+      git:
+        repo: https://github.com/epi052/feroxbuster
+        dest: /opt/feroxbuster
+        update: yes
+    - name: get fff
+      git:
+        repo: https://github.com/tomnomnom/fff
+        dest: /opt/fff
+        update: yes
+    - name: get ffuf
+      git:
+        repo: https://github.com/ffuf/ffuf
+        dest: /opt/ffuf
+        update: yes
+    - name: get firefox_decrypt
+      git:
+        repo: https://github.com/unode/firefox_decrypt
+        dest: /opt/firefox_decrypt
+        update: yes
+
+#G:
+    - name: get gau
+      git:
+        repo: https://github.com/lc/gau
+        dest: /opt/gau
+        update: yes
+    - name: get getsploit
+      git:
+        repo: https://github.com/vulnersCom/getsploit
+        dest: /opt/getsploit
+        update: yes
+    - name: get github-search
+      git:
+        repo: https://github.com/gwen001/github-search
+        dest: /opt/github-search
+        update: yes
+    - name: get gospider
+      git:
+        repo: https://github.com/jaeles-project/gospider
+        dest: /opt/gospider
+        update: yes
+    - name: get gowitness
+      git:
+        repo: https://github.com/sensepost/gowitness
+        dest: /usr/bin/gowitness
+        update: yes
+    - name: get GTFOBLookup
+      git:
+        repo: https://github.com/nccgroup/GTFOBLookup
+        dest: /opt/GTFOBLookup
+        update: yes
+
+#H:
+    - name: get hacks
+      git:
+        repo: https://github.com/tomnomnom/hacks
+        dest: /opt/hacks
+        update: yes
+    - name: get hakrawler
+      git:
+        repo: https://github.com/hakluke/hakrawler
+        dest: /opt/hakrawler
+        update: yes
+    - name: get hetty
+      git:
+        repo: https://github.com/dstotijn/hetty
+        dest: /opt/hetty
+        update: yes
+    - name: get httprobe
+      git:
+        repo: https://github.com/tomnomnom/httprobe
+        dest: /opt/httprobe
+        update: yes
+
+#I:
+    - name: get ike-scan
+      git:
+        repo: https://github.com/royhills/ike-scan
+        dest: /opt/ike-scan
+        update: yes
+    #- name: configure ike-scan
+    #  shell: autoreconf --install; ./configure --with-openssl
+    #  args:
+    #    chdir: /opt/ike-scan
+    - name: get instashell
+      git:
+        repo: https://github.com/NathanLundner/instashell
+        dest: /opt/instashell
+        update: yes
+    - name: get Interlace
+      git:
+        repo: https://github.com/codingo/Interlace
+        dest: /opt/Interlace
+
+#J:
+    - name: get JohnTheRipper
+      git:
+        repo: https://github.com/magnumripper/JohnTheRipper
+        dest: /opt/JohnTheRipper
+        update: yes
+
+#K:
+
+#L:
+    - name: get lazyrecon
+      git:
+        repo: https://github.com/nahamsec/lazyrecon
+        dest: /opt/lazyrecon
+        update: yes
+    - name: get LinEnum rebootuser
+      git:
+        repo: https://github.com/rebootuser/LinEnum
+        dest: /opt/LinEnum_rebootuser
+        update: yes
+    - name: get LinEnum Z3R0th-13 
+      git:
+        repo: https://github.com/Z3R0th-13/LinEnum
+        dest: /opt/LinEnum_Z3R0th-13
+        update: yes
+    - name: get Linux_Exploit_Suggester
+      git:
+        repo: https://github.com/PenturaLabs/Linux_Exploit_Suggester
+        dest: /opt/Linux_Exploit_Suggester
+        update: yes
+    - name: get linuxprivchecker
+      git:
+        repo: https://github.com/sleventyeleven/linuxprivchecker
+        dest: /opt/linuxprivchecker
+        update: yes
+
+#M:
+    - name: get MANSPIDER
+      git:
+        repo: https://github.com/blacklanternsecurity/MANSPIDER
+        dest: /opt/MANSPIDER
+        update: yes
+    - name: get mapper
+      git:
+        repo: https://github.com/pry0cc/mapper
+        dest: /opt/mapper
+        update: yes
+    - name: get massdns
+      git:
+        repo: https://github.com/blechschmidt/massdns
+        dest: /opt/massdns
+        update: yes
+    - name: get metabigor
+      git:
+        repo: https://github.com/j3ssie/metabigor
+        dest: /opt/metabigor
+        update: yes
+    - name: get Metasploit-Plugins
+      git:
+        repo: https://github.com/darkoperator/Metasploit-Plugins
+        dest: /opt/Metasploit-Plugins
+        update: yes
+    - name: get meterpreterjank
+      git:
+        repo: https://github.com/lockfale/meterpreterjank
+        dest: /opt/meterpreterjank
+        update: yes 
+    - name: get mimipenguin
+      git:
+        repo: https://github.com/huntergregal/mimipenguin
+        dest: /opt/mimipenguin
+        update: yes
+    - name: get mitm6
+      git:
+        repo: https://github.com/fox-it/mitm6
+        dest: /opt/mitm6
+        update: yes
+
+#N:
+    - name: get navi
+      git:
+        repo: https://github.com/denisidoro/navi
+        dest: /opt/navi
+        update: yes
+    - name: get wordlist nerdlist 
+      git:
+        repo: https://github.com/tarahmarie/nerdlist 
+        dest: /usr/share/wordlists/nerdlist
+        update: yes
+     - name: get Nmap-NSE-scripts-collection
+      git: 
+        repo: https://github.com/emadshanab/Nmap-NSE-scripts-collection
+        dest: /opt/Nmap-NSE-scripts-collection
+        update: yes
+    - name: get nmapAutomator
+      git:
+        repo: https://github.com/21y4d/nmapAutomator
+        dest: /opt/<repo>
+        update: yes
+    - name: get nmap-vulners
+      git:
+        repo: https://github.com/vulnersCom/nmap-vulners
+        dest: /opt/nmap-vulners
+        update: yes
+    - name: get nsdp-discover
+      git:
+        repo: https://github.com/nccgroup/nsdp-discover
+        dest: /opt/nsdp-discover
+        update: yes
+    - name: get nuclei
+      git:
+        repo: https://github.com/projectdiscovery/nuclei 
+        dest: /opt/nuclei
+        update: yes
+
+#O:
+
+#P:
+    - name: get peda
+      git:
+        repo: https://github.com/longld/peda
+        dest: /opt/peda
+        update: yes 
+    - name: get p0wny-shell
+      git:
+        repo: https://github.com/flozz/p0wny-shell
+        dest: /opt/p0wny-shell
+        update: yes
+    - name: get PayloadsAllTheThings
+      git:
+        repo: https://github.com/swisskyrepo/PayloadsAllTheThings
+        dest: /opt/PayloadsAllTheThings
+        update: yes
+    - name: get pimpmykali
+      git:
+        repo: https://github.com/Dewalt-arch/pimpmykali
+        dest: /opt/pimpmykali
+        update: yes
+    - name: get php-reverse-shell
+      git:
+        repo: https://github.com/pentestmonkey/php-reverse-shell
+        dest: /opt/php-reverse-shell
+        update: yes
+    - name: get powercat
+      git:
+        repo: https://github.com/besimorhino/powercat
+        dest: /opt/powercat
+        update: yes
+    - name: get PrivescCheck
+      git:
+        repo: https://github.com/itm4n/PrivescCheck
+        dest: /opt/PrivescCheck
+        update: yes
+    - name: get privilege-escalation-awesome-scripts-suite
+      git:
+        repo: https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite
+        dest: /opt/privilege-escalation-awesome-scripts-suite
+    - name: get Probable-Wordlists
+      git: 
+        repo: https://github.com/berzerk0/Probable-Wordlists
+        dest: /usr/share/wordlists/Probable-Wordlists
+        update: yes    update: yes
+    - name: get PSBits
+      git:
+        repo: https://github.com/gtworek/PSBits
+        dest: /opt/PSBits
+        update: yes
+    - name: get pspy
+      git:
+        repo: https://github.com/DominicBreuker/pspy
+        dest: /opt/pspy
+        update: yes
+
+#Q:
+
+#R:
+    - name: get Reconnoitre
+      git:
+        repo: https://github.com/codingo/Reconnoitre
+        dest: /opt/Reconnoitre
+        update: yes
+    - name: get recursive-gobuster
+      git:
+        repo: https://github.com/epi052/recursive-gobuster
+        dest: /opt/recursive-gobuster
+        update: yes
+    - name: get redir
+      git:
+        repo: https://github.com/troglobit/redir
+        dest: /opt/redir
+        update: yes
+    - name: get relevant-wordlist
+      git: 
+        repo: https://github.com/pry0cc/relevant-wordlist
+        dest: /usr/share/wordlists/relevant-wordlist
+        update: yes
+    - name: get requests
+      git:
+        repo: https://github.com/psf/requests
+        dest: /opt/requests
+        update: yes
+    - name: get Responder
+      git:
+        repo: https://github.com/Spiderlabs/Responder
+        dest: /opt/Responder
+        update: yes
+    - name: get rmiscout
+      git: 
+        repo: https://github.com/BishopFox/rmiscout
+        dest: /usr/share/wordlists/rmiscout
+        update: yes
+    - name: get rsg
+      git:
+        repo: https://github.com/mthbernardes/rsg
+        dest: /opt/rsg
+        update: yes
+    - name: get RustScan
+      git:
+        repo: https://github.com/RustScan/RustScan
+        dest: /opt/RustScan
+        update: yes
+
+#S:
+    - name: get scantron
+      git:
+        repo: https://github.com/rackerlabs/scantron
+        dest: /opt/scantron
+        update: yes
+    - name: get SecLists
+      git:
+        repo: https://github.com/danielmiessler/SecLists
+        dest: /usr/share/wordlists/SecLists
+        update: yes
+    - name: get SecUtils clean_wordlist
+      git: 
+        repo: https://github.com//BonJarber/SecUtils
+        dest: /opt/SecUtils
+        update: yes
+    - name: get sherlock
+      git:
+        repo: https://github.com/sherlock-project/sherlock
+        dest: /opt/sherlock
+        update: yes
+    - name: get spoofcheck
+      git:
+        repo: https://github.com/BishopFox/spoofcheck
+        dest: /opt/spoofcheck
+        update: yes
+    - name: get sslscan
+      git:
+        repo: https://github.com/rbsec/sslscan
+        dest: /opt/sslscan
+        update: yes
+    - name: get Subdomains-brutforce-wordlists-collection
+      git: 
+        repo: https://github.com/emadshanab/Subdomains-brutforce-wordlists-collection
+        dest: /usr/share/wordlists/Subdomains-brutforce-wordlists-collection
+        update: yes
+    - name: get Sublist3r
+      git:
+        repo: https://github.com/aboul3la/Sublist3r
+        dest: /opt/Sublist3r
+        update: yes
+    - name: get SUID3NUM
+      git:
+        repo: https://github.com/Anon-Exploiter/SUID3NUM
+        dest: /opt/SUID3NUM
+        update: yes
+    - name: get SuperWordlist
+      git: 
+        repo: https://github.com/fuzz-security/SuperWordlist
+        dest: /usr/share/wordlists/SuperWordlist
+        update: yes
+
+#T:
+    - name: get tbhm
+      git:
+        repo: https://github.com/jhaddix/tbhm
+        dest: /opt/tbhm
+        update: yes
+    - name: get the-essentials
+      git:
+        repo: https://github.com/blindpentester/the-essentials
+        dest: /opt/the-essentials
+        update: yes
+    - name: get testssl
+      git:
+        repo: https://github.com/drwetter/testssl.sh.git
+        dest: /opt/<repo>
+        update: yes
+    - name: get threader3000
+      git:
+        repo: https://github.com/dievus/threader3000
+        dest: /opt/threader3000
+        update: yes
+
+
+#U:
+    - name: get unfurl
+      git:
+        repo: https://github.com/tomnomnom/unfurl
+        dest: /opt/unfurl
+        update: yes
+    - name: get unicorn
+      git:
+        repo: https://github.com/trustedsec/unicorn
+        dest: /opt/unicorn
+        update: yes
+
+#V:
+
+#W:
+    - name: get waybackurls
+      git:
+        repo: https://github.com/tomnomnom/waybackurls
+        dest: /opt/waybackurls
+        update: yes
+    - name: get WebMap
+      git:
+        repo: https://github.com/SabyasachiRana/WebMap
+        dest: /opt/WebMap
+        update: yes
+    - name: get wesng
+      git:
+        repo: https://github.com/bitsadmin/wesng
+        dest: /opt/wesng
+        update: yes
+    - name: get winPEAS
+      git:
+        repo: https://github.com/carlospolop/PEASS-ng/tree/master/winPEAS
+        dest: /opt/winPEAS
+        update: yes
+    - name: get Wordlists ZephrFish
+      git:
+        repo: https://github.com/ZephrFish/Wordlists
+        dest: /usr/share/wordlists/ZephrFish
+        update: yes
+
+#- name: get wpscan (requires `gem install bundler && bundle install`)
+#  git:    
+
+
+
+#    repo: https://github.com/wpscanteam/wpscan
+#    dest: /opt/wpscan
+#    update: yes
+
+#end
+
+
+
+
+
