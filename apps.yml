@@ -192,11 +192,12 @@
         repo: https://github.com/jaeles-project/gospider
         dest: /opt/gospider
         update: yes
-    - name: get gowitness
-      git:
-        repo: https://github.com/sensepost/gowitness
-        dest: /usr/bin/gowitness
-        update: yes
+    # error already exists
+    #- name: get gowitness
+    #  git:
+    #    repo: https://github.com/sensepost/gowitness
+    #    dest: /usr/bin/gowitness
+    #    update: yes
     - name: get GTFOBLookup
       git:
         repo: https://github.com/nccgroup/GTFOBLookup
