@@ -1,0 +1,29 @@
+---
+- name: Test Setup
+  hosts: localhost
+  connection: local
+  become: true
+  gather_facts: false
+  tasks:
+    - name: Test local action
+      command: echo "Ready to roll"
+
+  - name: add arnold user
+    user:
+      name: '{{ arnold }}'
+      password: '{{ arnold }}'
+      groups: sudo
+      shell: /bin/bash
+      generate_ssh_key: yes
+      ssh_key_bits: 2048
+      ssh_key_file: .ssh/id_rsa
+
+  - name: add arnold user to sudoers.d
+    lineinfile:
+      path: '/etc/sudoers.d/{{ arnold }}'
+      state: present
+      create: yes
+      regexp: '{{ arnold }} .*'
+      line: '{{ arnold }} ALL=(ALL) NOPASSWD:ALL'
+ 
+ ...
