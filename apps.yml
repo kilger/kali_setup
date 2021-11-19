@@ -582,6 +582,7 @@
         dest: /usr/share/wordlists/ZephrFish
         update: yes
 
+
 #- name: get wpscan (requires `gem install bundler && bundle install`)
 #  git:    
 
