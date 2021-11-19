@@ -405,7 +405,7 @@
       git: 
         repo: https://github.com/berzerk0/Probable-Wordlists
         dest: /usr/share/wordlists/Probable-Wordlists
-        update: yes    update: yes
+        update: yes
     - name: get PSBits
       git:
         repo: https://github.com/gtworek/PSBits
