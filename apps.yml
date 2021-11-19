@@ -333,7 +333,7 @@
         repo: https://github.com/tarahmarie/nerdlist 
         dest: /usr/share/wordlists/nerdlist
         update: yes
-     - name: get Nmap-NSE-scripts-collection
+    - name: get Nmap-NSE-scripts-collection
       git: 
         repo: https://github.com/emadshanab/Nmap-NSE-scripts-collection
         dest: /opt/Nmap-NSE-scripts-collection
