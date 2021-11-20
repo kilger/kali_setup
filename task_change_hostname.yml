@@ -1,4 +1,4 @@
-#7:21
+#7:25
 ---
 - name: Change hostname with user input at runtime -e set_hostname=<new_hostname>
   hosts: localhost
@@ -10,9 +10,9 @@
       lineinfile:
         path: /etc/hosts
         state: present
-        regexp: '^%127.0.1.1       kali'
+        regexp: '^127.0.1.1       kali'
         backup: yes                #may need to remove
-        line: '%127.0.1.1       {{ set_hostname }}'
+        line: '127.0.1.1       {{ set_hostname }}'
 #    - name: Set Hostname to user entered value
 #      command: 'hostnamectl set-hostname "{{ set_hostname }}"'
 #    - name: Reboot system
