@@ -1,4 +1,4 @@
-#9:38
+#6:37
 ---
 - name: Change hostname with user input at runtime -e set_hostname=<new_hostname>
   hosts: localhost
