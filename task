@@ -1,0 +1,9 @@
+---
+- name: Test Setup
+  hosts: localhost
+  connection: local
+  become: true
+  gather_facts: false
+  tasks:
+    - name: Test local action
+      command: echo "Ready to roll"
