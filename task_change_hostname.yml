@@ -16,7 +16,7 @@
 #        regexp: '^127.0.1.1       kali'
         backup: yes                #may need to remove
 #        line: '127.0.1.1       {{ set_hostname }}'
-    This changes the /etc/hosts file l
+  #  This changes the /etc/hosts file l
 
         
         
