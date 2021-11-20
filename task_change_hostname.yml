@@ -14,7 +14,7 @@
         line: '127.0.0.1  {{ set_hostname }}'
     - name: Set Hostname to user entered value
       command: 'hostnamectl set-hostname "{{ set_hostname }}"'
-    - name: Reboot system
-      command: 'reboot'
+#    - name: Reboot system
+#      command: 'reboot'
 ...
-#8:22
+#8:25
