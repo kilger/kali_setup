@@ -6,7 +6,7 @@
   gather_facts: true
   tasks:
     - name: kali to.......
-        lineinfile:
+      lineinfile:
         path: /etc/hosts
         state: present
         regexp: '^%127.0.1.1 kali'
