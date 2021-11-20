@@ -1,4 +1,4 @@
-#7:43
+#7:45
 ---
 - name: Change hostname with user input at runtime -e set_hostname=<new_hostname>
   hosts: localhost
@@ -16,13 +16,7 @@
         backup: yes                #may need to remove
 #        line: '127.0.1.1       {{ set_hostname }}'
     This changes the /etc/hosts file
-    - name: Ensure SELinux is set to enforcing mode
-  lineinfile:
-    path: /etc/selinux/config
-    regexp: '^SELINUX='
-    line: SELINUX=enforcing
-This sets the value of SELINUX=enforcing.
-        
+
         
         
 #    - name: Set Hostname to user entered value
