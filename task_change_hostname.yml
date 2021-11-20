@@ -10,9 +10,9 @@
       lineinfile:
         path: /etc/hosts
         state: present
-        regexp: '^%127.0.1.1 kali'
+        regexp: '^%127.0.1.1       kali'
         backup: yes                #may need to remove
-        line: '%127.0.1.1 "{{ set_hostname }}"'
+        line: '%127.0.1.1       "{{ set_hostname }}"'
     - name: Set Hostname
       command: 'hostnamectl set-hostname "{{ set_hostname }}"'
     - name: Reboot system
