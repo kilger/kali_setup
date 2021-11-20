@@ -3,7 +3,7 @@
   hosts: localhost
   connection: local
   become: true
-  gather_facts: true
+  gather_facts: false
   tasks:
     - name: Set hosts file to user entered value
       lineinfile:
@@ -17,4 +17,4 @@
     - name: Reboot system
       command: 'reboot'
 ...
-#8:17
+#8:19
