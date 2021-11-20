@@ -7,21 +7,23 @@
   tasks:
 #    - name: Test local action
 #      command: echo "Ready to roll"
+    - debug:
+        msg: "I am connecting to {{ ansible_nodename }} which is running {{ ansible_distribution }} {{ ansible_distribution_version }}"
  
     - name: Create .inputrc if missing
        ansible.builtin.file:
          path: ~/.inputrc
          state: present
-    - name: Ansible Insert multiple lines using blockinfile
-      blockinfile:
-        dest: ~/.inputrc
-        block: |
-          "\e[A": history-search-backward
-          "\e[B": history-search-forward
-          "\e[C": forward-char
-          "\e[D": backward-char
-          #managed by ansible
-        backup: yes
+#    - name: Ansible Insert multiple lines using blockinfile
+#      blockinfile:
+#        dest: ~/.inputrc
+#        block: |
+#          "\e[A": history-search-backward
+#          "\e[B": history-search-forward
+#          "\e[C": forward-char
+#          "\e[D": backward-char
+#          #managed by ansible
+#        backup: yes
  
  
  
@@ -33,5 +35,5 @@
 #        content: |
 #          dog1
 #          tiger
-#9:46
+#9:57
 
