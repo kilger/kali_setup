@@ -1,3 +1,4 @@
+#9:38
 ---
 - name: Change hostname
   hosts: localhost
@@ -16,3 +17,4 @@
       command: 'hostnamectl set-hostname kali-07'
     - name: Reboot system
       command: 'reboot'
+...
