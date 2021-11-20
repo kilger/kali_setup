@@ -9,14 +9,14 @@
       lineinfile:
         path: /etc/hosts
         state: present
-        search_string: '127.0.1.1       kali'
-        line: '127.0.0.1        {{ set_hostname }}'
+        search_string: '127.0.1.1 kali'
+        line: '127.0.0.1  {{ set_hostname }}'
         #search_string: '127.0.1.kali'
         #line: '127.0.0.1       {{ set_hostname }}'
 #        regexp: '^127.0.1.1       kali'
         backup: yes                #may need to remove
 #        line: '127.0.1.1       {{ set_hostname }}'
-  #  This changes the /etc/hosts file l
+
 
         
         
@@ -25,4 +25,4 @@
 #    - name: Reboot system
 #      command: 'reboot'
 ...
-#7:59
+#8:03
