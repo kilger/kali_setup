@@ -1,0 +1,18 @@
+---
+- name: Change hostname
+  hosts: localhost
+  connection: local
+  become: true
+  gather_facts: true
+  tasks:
+    - name: kali to.......
+        lineinfile:
+        path: /etc/hosts
+        state: present
+        regexp: '^%127.0.1.1 kali'
+        backup: yes                #may need to remove
+        line: '%127.0.1.1 kali-07'
+   - name: Set Hostname
+     command: 'hostnamectl set-hostname kali-07'
+   - name: Reboot system
+     command: 'reboot'
