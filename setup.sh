@@ -1,6 +1,6 @@
 #kali_pregame.sh
 #Version 0.1
-#
+#wget -O ~/setup.sh https://raw.githubusercontent.com/kilger/kali_setup/main/setup.sh
 
 #!/bin/bash 
 
