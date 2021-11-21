@@ -1,0 +1,25 @@
+---
+- name: Change hostname with user input at runtime
+  hosts: localhost
+  connection: local
+  become: true
+  gather_facts: true
+  vars_prompt:
+      - name: NEW_HOSTNAME
+      - prompt: "And this beast of a machine will be called?"
+      - private: no
+  
+  tasks:
+    - name: Set hosts file to {{ NEW_HOSTNAME }}
+      lineinfile:
+        path: /etc/hosts
+        state: present
+        regexp: '^127.0.0.1     kali'
+        backup: yes
+        line: '127.0.0.1  {{ NEW_HOSTNAME }}'
+    - name: Set Hostname to {{ NEW_HOSTNAME }}
+      command: 'hostnamectl set-hostname "{{ NEW_HOSTNAME }}"'
+    - name: Reboot system
+      command: 'reboot'
+...
+#4:13
