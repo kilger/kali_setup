@@ -1,0 +1,60 @@
+---
+- name: add user
+  hosts: localhost
+  connection: local
+  become: true
+  gather_facts: true
+  vars_prompt:
+    - name: kali_user
+      prompt: "user name?"
+      private: no
+#    - name: kali_groups
+#      prompt: "add to what groups?"
+#      private: no
+
+
+  tasks:
+    - name: Add the user 'bond' with a bash shell
+      ansible.builtin.user:
+        name: "{{ kali_user }}"
+        shell: /bin/bash
+        groups: docker,sudo
+        state: present
+        append: yes
+ #       update_password: on_create
+        generate_ssh_key: yes
+        ssh_key_bits: 2048
+        ssh_key_file: .ssh/id_rsa
+
+    - name: Remove no password from Admin group
+      lineinfile:
+        path: /etc/sudoers
+        state: present
+        regexp: '^%ADMIN ALL='
+        line: '%ADMIN ALL=(ALL) NOPASSWD: ALL'
+        validate: /usr/sbin/visudo -cf %s
+
+    - name: Set permission on home folder
+      ansible.builtin.file:
+        path: /home/{{ kali_user }}
+        state: directory
+        owner: "{{ kali_user }}"
+    #    group: foo
+        mode: '0700'
+
+    - name: add {{ kali_user }} user to sudoers.d
+      lineinfile:
+        path: '/etc/sudoers.d/{{ kali_user }}'
+        state: present
+        create: yes
+        regexp: '{{ kali_user }} .*'
+        line: '{{ kali_user }} ALL=(ALL) NOPASSWD:ALL'
+
+#    - name: Add sudoer rule for local user
+#      copy:
+#        dest: /etc/sudoers.d/{{ kali_user }}
+#        src: etc/sudoers.d/{{ kali_user }}
+#        owner: root
+#        group: root
+#        mode: 0440
+#        validate: /usr/sbin/visudo -csf %s
