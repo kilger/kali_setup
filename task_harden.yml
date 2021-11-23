@@ -1,0 +1,260 @@
+---
+- hosts: localhost
+  connection: local
+  become: true
+  gather_facts: true
+  
+  tasks:
+  
+    - name: Change /etc/fstab file ownership, group and permissions
+      ansible.builtin.file:
+        path: /etc/fstab
+        owner: root
+        group: root
+        mode: '0644'
+#missing grub.conf in kali
+    - name: Change /etc/grub.conf file ownership, group and permissions
+      ansible.builtin.file:
+        path: /etc/grub.conf
+        owner: root
+        group: root
+        mode: '0600'
+        
+    - name: Change sshd_config file ownership, group and permissions
+      ansible.builtin.file:
+        path: /etc/ssh/sshd_config
+        owner: root
+        group: root
+        mode: '0600'
+  
+  
+    - name: Create blacklist.conf file if missing
+      ansible.builtin.file:
+        path: /etc/modprobe.d/blacklist.conf
+        state: touch
+
+    - name: Block USB Storage
+      lineinfile:
+        line: "blacklist usb_storage   #Managed by Ansible"
+        dest: "/etc/modprobe.d/blacklist.conf
+        backup: yes 
+        
+    - name: Block USB Storage
+      blockinfile:
+        dest: /etc/rc.local
+        block: |
+          modprobe -r usb_storage 
+          exit 0
+        backup: yes
+
+
+      - name: Change /var/spool/cron file ownership, group and permissions
+      ansible.builtin.file:
+        path: /var/spool/cron
+        owner: root
+        group: root
+        mode: '0600'
+    - name: Change /etc/passwd file ownership, group and permissions
+      ansible.builtin.file:
+        path: /etc/passwd
+        owner: root
+        group: root
+        mode: '0644'
+    - name: Change /etc/group file ownership, group and permissions
+      ansible.builtin.file:
+        path: /etc/group
+        owner: root
+        group: root
+        mode: '0644'
+    - name: Change /etc/shadow file ownership, group and permissions
+      ansible.builtin.file:
+        path: /etc/shadow
+        owner: root
+        group: root
+        mode: '0600'
+    - name: Change /etc/gshadow file ownership, group and permissions
+      ansible.builtin.file:
+        path: /etc/gshadow
+        owner: root
+        group: root
+        mode: '0600'
+
+
+
+  #Set User/Group Owner and Permission on “/etc/anacrontab”, “/etc/crontab” and “/etc/cron.*”
+    - name: Change anacrontab file ownership, group and permissions
+      ansible.builtin.file:
+        path: /etc/anacrontab
+        owner: root
+        group: root
+        mode: '0600'
+    - name: Change crontab file ownership, group and permissions
+      ansible.builtin.file:
+        path: /etc/crontab
+        owner: root
+        group: root
+        mode: '0600'
+    - name: Change cron.hourly file ownership, group and permissions
+      ansible.builtin.file:
+        path: /etc/cron.hourly
+        owner: root
+        group: root
+        mode: '0600'
+    - name: Change cron.daily file ownership, group and permissions
+      ansible.builtin.file:
+        path: /etc/cron.daily
+        owner: root
+        group: root
+        mode: '0600'
+    - name: Change cron.weekly file ownership, group and permissions
+      ansible.builtin.file:
+        path: /etc/cron.weekly
+        owner: root
+        group: root
+        mode: '0600'
+    - name: Change cron.monthly file ownership, group and permissions
+      ansible.builtin.file:
+        path: /etc/cron.monthly
+        owner: root
+        group: root
+        mode: '0600'
+    - name: Change cron.d file ownership, group and permissions
+      ansible.builtin.file:
+        path: /etc/cron.d
+        owner: root
+        group: root
+        mode: '0600'
+
+
+
+  
+#Additional process hardening
+    - name: Lock the boot directory
+      lineinfile:
+        line: "hard core 0   #Managed by Ansible"
+        dest: "/etc/security/limits.conf"
+        backup: yes
+
+    - name: Process Hardening
+      blockinfile:
+        dest: /etc/sysctl.conf
+        block: |
+          fs.suid_dumpable = 0 
+          kernel.exec-shield = 1
+          kernel.randomize_va_space = 2
+        backup: yes  
+  
+  
+  
+  
+  
+  
+  
+  
+  #SSH Hardening
+    - name: Change sshd_config file ownership, group and permissions
+      ansible.builtin.file:
+        path: /etc/ssh/sshd_config
+        owner: root
+        group: root
+        mode: '0600'
+
+#Set User/Group Owner and Permission on “/etc/anacrontab”, “/etc/crontab” and “/etc/cron.*”
+    - name: Change anacrontab file ownership, group and permissions
+      ansible.builtin.file:
+        path: /etc/anacrontab
+        owner: root
+        group: root
+        mode: '0600'
+    - name: Change crontab file ownership, group and permissions
+      ansible.builtin.file:
+        path: /etc/crontab
+        owner: root
+        group: root
+        mode: '0600'
+    - name: Change cron.hourly file ownership, group and permissions
+      ansible.builtin.file:
+        path: /etc/cron.hourly
+        owner: root
+        group: root
+        mode: '0600'
+    - name: Change cron.daily file ownership, group and permissions
+      ansible.builtin.file:
+        path: /etc/cron.daily
+        owner: root
+        group: root
+        mode: '0600'
+    - name: Change cron.weekly file ownership, group and permissions
+      ansible.builtin.file:
+        path: /etc/cron.weekly
+        owner: root
+        group: root
+        mode: '0600'
+    - name: Change cron.monthly file ownership, group and permissions
+      ansible.builtin.file:
+        path: /etc/cron.monthly
+        owner: root
+        group: root
+        mode: '0600'
+    - name: Change cron.d file ownership, group and permissions
+      ansible.builtin.file:
+        path: /etc/cron.d
+        owner: root
+        group: root
+        mode: '0600'
+
+    - name: Change /var/spool/cron file ownership, group and permissions
+      ansible.builtin.file:
+        path: /var/spool/cron
+        owner: root
+        group: root
+        mode: '0600'
+    - name: Change /etc/passwd file ownership, group and permissions
+      ansible.builtin.file:
+        path: /etc/passwd
+        owner: root
+        group: root
+        mode: '0644'
+    - name: Change /etc/group file ownership, group and permissions
+      ansible.builtin.file:
+        path: /etc/group
+        owner: root
+        group: root
+        mode: '0644'
+    - name: Change /etc/shadow file ownership, group and permissions
+      ansible.builtin.file:
+        path: /etc/shadow
+        owner: root
+        group: root
+        mode: '0600'
+    - name: Change /etc/gshadow file ownership, group and permissions
+      ansible.builtin.file:
+        path: /etc/gshadow
+        owner: root
+        group: root
+        mode: '0600'
+
+#Set journald Journal Permanent, will need a reboot
+    - name: Create /var/log/journal set file ownership, group and permissions
+      ansible.builtin.file:
+        path: /var/log/journal
+        owner: root
+        group: root
+        mode: '2755'
+
+
+#Additional process hardening
+    - name: Lock the boot directory
+      lineinfile:
+        line: "hard core 0   #Managed by Ansible"
+        dest: "/etc/security/limits.conf"
+        backup: yes
+
+    - name: Process Hardening
+      blockinfile:
+        dest: /etc/sysctl.conf
+        block: |
+          fs.suid_dumpable = 0 
+          kernel.exec-shield = 1
+          kernel.randomize_va_space = 2
+        backup: yes
