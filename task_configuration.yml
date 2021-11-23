@@ -1,0 +1,15 @@
+---
+- name: Misc shell commands to configure system
+- hosts: localhost
+  connection: local
+  become: true
+  gather_facts: true
+
+    - name: Update the Nmap script database
+      ansible.builtin.shell: "nmap --script-updatedb"
+      
+    - name: Wireshark: Disable lua for all users
+      ansible.builtin.shell: "sed -i 's/disable_lua = false/disable_lua =true/' /etc/wireshark/init.lua"
+      
+      
+
