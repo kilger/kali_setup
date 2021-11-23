@@ -1,15 +1,45 @@
-
-- name: "flush all iptables rules"
-  iptables:
-    flush: yes
-
-
-- name: Allow connections on multiple ports
-  ansible.builtin.iptables:
-    chain: INPUT
-    protocol: tcp
-    destination_ports:
-      - "80"
-      - "443"
-      - "8081:8083"
-    jump: ACCEPT
+---
+- name: iptables Setup
+  hosts: localhost
+  connection: local
+  become: true
+  gather_facts: false
+  
+  tasks:
+    - name: "flush all iptables rules"
+      iptables:
+        flush: yes
+        
+    - name: "allow SSH on the input chain"
+      iptables:
+        chain: INPUT
+        protocol: tcp
+        destination_port: 22 
+        match: conntrack
+        ctstate: NEW,ESTABLISHED
+        source: 192.168.86.0/24
+        jump: ACCEPT
+    
+    - name: "allow SSH on the output chain"
+      iptables:
+        chain: OUTPUT
+        protocol: tcp
+        source_port: 22
+        match: conntrack
+        ctstate: ESTABLISHED
+        jump: ACCEPT
+    
+    - name: Allow connections on multiple ports
+      ansible.builtin.iptables:
+        chain: INPUT
+        protocol: tcp
+        destination_ports:
+          - "80"
+          - "443"
+          - "8081:8083"
+        jump: ACCEPT
+           
+    - name: "drop any connection that does not match a rule on the INPUT chain"
+      iptables:
+        chain: INPUT
+        jump: DROP
