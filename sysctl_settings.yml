@@ -1,5 +1,5 @@
 ---
-- name: vpn setup
+- name: sysctl settings for failsafe vpn
   hosts: localhost
   connection: local
   become: true
