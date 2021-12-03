@@ -10,7 +10,7 @@
         name: "{{ item.name }}"
         value: "{{ item.value }}"  
         state: present
-        backup: yes
+#        backup: yes
         reload: yes
         sysctl_set: yes
       with_items:
