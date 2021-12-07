@@ -1,0 +1,116 @@
+---
+- name: Apt installs
+  hosts: localhost
+  connection: local
+  become: true
+  gather_facts: true
+  tasks:
+#    - debug:
+#        msg: "I am connecting to {{ ansible_nodename }} which is running {{ ansible_distribution }} {{ ansible_distribution_version }}"
+    - name: Only run "update_cache=yes" if the last one is more than 3600 seconds ago
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+    - name: Install a list of packages
+      apt:
+        pkg:
+        - apt-file
+        - apt-transport-https
+        - bleachbit
+        - bum
+        - chromium
+        - cifs-utils 
+        #- creddump
+        - cryptsetup
+        #- code        #requires repo and key be installed first
+       #docker        - ca-certificates
+        - curl
+        - dnsutils  
+        - ecryptfs-utils
+        - exif 
+        - exiv2 
+        - exfat-fuse 
+        - exfat-utils
+        - fail2ban
+        - figlet
+        - filezilla
+        - filezilla-common
+        - fonts-firacode
+        - fonts-noto-color-emoji
+      #  - flashplugin-nonfree
+       # - feroxbuster
+        - gdebi
+        - gedit
+        - gimp
+        - git-all
+        - grc
+#docker        - gnupg-agent
+        - gnome-do
+        #- impacket-scripts
+       # - icedtea-plugin
+        - iperf3
+        - html2text
+        - htop
+        - iptables
+        - iptables-persistent
+        - jq
+        - knockd
+        - libreoffice-calc
+        - libreoffice-gnome 
+        - libreoffice-writer 
+        - metagoofil 
+        - nbtscan
+        - netcat-openbsd 
+        - net-tools
+        - netfilter-persistent
+        - nikto
+        - nmap
+        - onesixtyone
+        - openvpn
+        #- oscanner 
+        - pandoc
+        - passing-the-hash
+        #- powershell
+        - preload
+        - python3-pip
+        - redis-tools
+        - rlwrap
+        - rsync
+        - scrub
+        - shutter
+        - sshfs
+        #- sipvicious
+        - smbclient 
+        - smbmap 
+        - snmp 
+     #docker- software-properties-common
+        - software-center
+        - sshpass
+        #- sslscan
+        - sudo
+        - syncthing
+        - synaptic
+        - texlive 
+        - texlive-latex-extra 
+        - texlive-fonts-extra
+        - tmux
+        - tmuxp
+        #- tnscmd10g
+        - tor
+        - ufw
+        - vim
+        - vnstat
+        - whatweb
+        - whois
+        - wkhtmltopdf
+        - wireshark
+        - vncsnapshot
+        - xdotool
+        - xfce4-screenshooter
+        
+        
+
+        
+
+        
+
