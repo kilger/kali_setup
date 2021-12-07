@@ -17,7 +17,7 @@
         - apt-file
         - apt-transport-https
         - bleachbit
-        - bum
+        #- bum NA
         - chromium
         - cifs-utils 
         #- creddump
@@ -45,7 +45,7 @@
         - git-all
         - grc
 #docker        - gnupg-agent
-        - gnome-do
+        #- gnome-do NA
         #- impacket-scripts
        # - icedtea-plugin
         - iperf3
@@ -79,14 +79,14 @@
         - rlwrap
         - rsync
         - scrub
-        - shutter
+        #- shutter NA
         - sshfs
         #- sipvicious
         - smbclient 
         - smbmap 
         - snmp 
      #docker- software-properties-common
-        - software-center
+        #- software-center NA
         - sshpass
         #- sslscan
         - sudo
