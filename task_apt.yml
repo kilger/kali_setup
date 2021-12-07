@@ -53,6 +53,7 @@
         - htop
         - iptables
         - iptables-persistent
+        - iptables-services
         - jq
         - kali-grant-root
         - knockd
