@@ -17,6 +17,8 @@
 -A DOCKER-ISOLATION-STAGE-2 -o docker0 -j DROP
 -A DOCKER-ISOLATION-STAGE-2 -j RETURN
 -A DOCKER-USER -j RETURN
+#Allow outbound back in
+-A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
 #SSH 
 -A INPUT -p tcp --dport 22 -j ACCEPT 
 #DROP everything not explicitly allowed
