@@ -53,7 +53,7 @@
         - htop
         - iptables
         - iptables-persistent
-        - iptables-services
+        #- iptables-services #centos only
         - jq
         - kali-grant-root
         - knockd
