@@ -54,6 +54,7 @@
         - iptables
         - iptables-persistent
         - jq
+        - kali-grant-root
         - knockd
         - libreoffice-calc
         - libreoffice-gnome 
