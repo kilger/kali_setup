@@ -1,0 +1,34 @@
+---
+- name: syncthing prerequesets
+  hosts: localhost
+  connection: local
+  become: true
+  gather_facts: true
+  tasks:
+    - name: Add the release PGP keys
+      get_url:
+        url: https://syncthing.net/release-key.gpg
+        dest: /usr/share/keyrings/syncthing-archive-keyring.gpg
+        #mode: '0440'
+
+    - name: Create file /etc/apt/sources.list.d/syncthing.list if missing
+      ansible.builtin.file:
+        path: /etc/apt/sources.list.d/syncthing.list
+        state: touch
+
+    - name: Add the "stable" channel to your APT source
+      lineinfile:
+        line: "deb [signed-by=/usr/share/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable"
+        dest: "/etc/apt/sources.list.d/syncthing.list"
+
+    - name: Only run "update_cache=yes" if the last one is more than 3600 seconds ago
+      apt:
+        update_cache: yes
+        cache_valid_time: 1
+
+    - name: Install a list of packages
+      apt:
+        pkg:
+        - syncthing
+        
+        
