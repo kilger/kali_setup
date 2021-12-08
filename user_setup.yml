@@ -6,7 +6,7 @@
   gather_facts: false
   vars_prompt:
     - name: name_user
-      prompt: "And this beast of a machine will be called?"
+      prompt: "Name of User to setup?"
       private: no
 
     - name: add {{ name_user }} user
