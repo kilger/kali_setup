@@ -9,31 +9,71 @@
       prompt: "Name of User to setup?"
       private: no
 
-    - name: add {{ name_user }} user
+    - name: add {{ name_user }} SSH key
       user:
         name: '{{ name_user }}'
-        password: '{{ name_user }}'
+        #password: '{{ name_user }}'
         groups: sudo
         shell: /bin/bash
         generate_ssh_key: yes
         ssh_key_bits: 2048
         ssh_key_file: .ssh/id_rsa
 
-#    - name: add {{ name_user }} user to sudoers.d
-#      lineinfile:
-#        path: '/etc/sudoers.d/{{ name_user }}'
-#        state: present
-#        create: yes
-#        regexp: '{{ name_user }} .*'
-#        line: '{{ name_user }} ALL=(ALL) NOPASSWD:ALL'
-
     - name: add {{ name_user }} user to sudoers.d          
       lineinfile:
-   #     path: '/etc/sudoers'
         path: '/etc/sudoers.d/{{ name_user }}'
         state: present
         create: yes
         regexp: '{{ name_user }} .*'
         line: '{{ name_user }} ALL=(ALL) NOPASSWD:ALL    #managed by ansible'
         validate: 'visudo -cf %s'
+        
+     - name: Create .inputrc for {{ name_user }}
+      ansible.builtin.file:
+         path: /home/{{ name_user }}/.inputrc
+         state: touch
+         owner: '{{ name_user }}'
+         group: '{{ name_user }}'
+         mode: '0700' 
+    - name: Ansible Insert multiple lines using blockinfile
+      blockinfile:
+        dest: /home/{{ name_user }}/.inputrc
+        block: |
+          "\e[A": history-search-backward
+          "\e[B": history-search-forward
+          "\e[C": forward-char
+          "\e[D": backward-char
+        backup: yes
+
+    - name: Set permission on home folder for {{ name_user }}
+      ansible.builtin.file:
+        path: /home/{{ name_user }}
+        owner: '{{ name_user }}'
+        group: '{{ name_user }}'
+        mode: '0700'
+
+    - name: download .bash_aliases for {{ name_user }}
+      get_url:
+        url: https://raw.githubusercontent.com/kilger/bash_aliases/master/.bash_aliases
+        dest: /home/{{ name_user }}/.bash_aliases
+        owner: '{{ name_user }}'
+        group: '{{ name_user }}'
+        mode: '0700' 
+
+    - name: Create directory /home/{{ name_user }}/scripts if missing
+      ansible.builtin.file:
+        path: /home/{{ name_user }}/scripts
+        state: directory
+        owner: '{{ name_user }}'
+        group: '{{ name_user }}'
+        mode: '0700' 
+
+    - name: download apt for programs to install
+      get_url:
+        url: https://raw.githubusercontent.com/kilger/kali_setup/main/task_apt.yml
+        dest: /home/{{ name_user }}/scripts
+        owner: '{{ name_user }}'
+        group: '{{ name_user }}'
+        mode: '0700' 
+
  
