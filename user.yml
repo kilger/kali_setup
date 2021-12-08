@@ -128,7 +128,14 @@
         owner: '{{ name_user }}'
         group: '{{ name_user }}'
         mode: '0700' 
-
+        
+    - name: download iptable rules w docker installed
+      get_url: 
+        url: https://raw.githubusercontent.com/kilger/kali_setup/main/iptables_w_docker.txt
+        dest: /home/{{ name_user }}/scripts
+        owner: '{{ name_user }}'
+        group: '{{ name_user }}'
+        mode: '0700' 
 
 
 
