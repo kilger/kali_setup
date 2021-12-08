@@ -39,23 +39,9 @@
     - name: Block USB Storage
       lineinfile:
         line: "blacklist usb_storage   #Managed by Ansible"
-        dest: "/etc/modprobe.d/blacklist.conf
+        dest: "/etc/modprobe.d/blacklist.conf"
         backup: yes 
         
-    - name: Block USB Storage
-      blockinfile:
-        dest: /etc/rc.local
-        block: |
-          modprobe -r usb_storage 
-          exit 0
-        backup: yes
-
-    - name: Set /var/spool/cron file ownership, group and permissions
-      ansible.builtin.file:
-        path: /var/spool/cron
-        owner: root
-        group: root
-        mode: '0600'
     - name: Set /etc/passwd file ownership, group and permissions
       ansible.builtin.file:
         path: /etc/passwd
@@ -91,6 +77,13 @@
 #        owner: root
 #        group: root
 #        mode: '0600'
+
+    - name: Set /var/spool/cron file ownership, group and permissions
+      ansible.builtin.file:
+        path: /var/spool/cron
+        owner: root
+        group: root
+        mode: '0600'
     - name: Change crontab file ownership, group and permissions
       ansible.builtin.file:
         path: /etc/crontab
@@ -128,30 +121,29 @@
         group: root
         mode: '0600'
 
-
-  - name: sysctl disable IPv6 settings
-    sysctl:
-      name: "{{ item.name }}"
-      value: "{{ item.value }}"
-      state: present
-      sysctl_set: yes
-      ignoreerrors: yes
-    with_items:
-      - { name: 'net.ipv6.conf.all.disable_ipv6', value: '1' }
-      - { name: 'net.ipv6.conf.default.disable_ipv6', value: '1' }
-      - { name: 'net.ipv6.conf.lo.disable6', value: '1' }
-      
-  - name: sysctl Process Hardening settings
-    sysctl:
-      name: "{{ item.name }}"
-      value: "{{ item.value }}"
-      state: present
-      sysctl_set: yes
-      ignoreerrors: yes
-    with_items:
-      - { name: 'fs.suid_dumpable', value: '0' }    
-      - { name: 'kernel.exec-shield', value: '1' }  
-      - { name: 'kernel.randomize_va_space', value: '2' }  
+    - name: sysctl disable IPv6 settings
+      sysctl:
+        name: "{{ item.name }}"
+        value: "{{ item.value }}"
+        state: present
+        sysctl_set: yes
+        ignoreerrors: yes
+      with_items:
+        - { name: 'net.ipv6.conf.all.disable_ipv6', value: '1' }
+        - { name: 'net.ipv6.conf.default.disable_ipv6', value: '1' }
+        - { name: 'net.ipv6.conf.lo.disable6', value: '1' }
+     
+    - name: sysctl Process Hardening settings
+      sysctl:
+        name: "{{ item.name }}"
+        value: "{{ item.value }}"
+        state: present
+        sysctl_set: yes
+        ignoreerrors: yes
+      with_items:
+        - { name: 'fs.suid_dumpable', value: '0' }    
+        - { name: 'kernel.exec-shield', value: '1' }  
+        - { name: 'kernel.randomize_va_space', value: '2' }  
       
    #Additional process hardening
     - name: Lock the boot directory
@@ -159,53 +151,11 @@
         line: "hard core 0   #Managed by Ansible"
         dest: "/etc/security/limits.conf"
         backup: yes
-
-#    - name: Process Hardening
-#      blockinfile:
-#        dest: /etc/sysctl.conf
-#        block: |
-#          fs.suid_dumpable = 0 
-#          kernel.exec-shield = 1
-#          kernel.randomize_va_space = 2
-#        backup: yes  
-  
-  
-  
-  
-  
-  
-  
-  
+        
   #SSH Hardening
     - name: Change sshd_config file ownership, group and permissions
       ansible.builtin.file:
         path: /etc/ssh/sshd_config
-        owner: root
-        group: root
-        mode: '0600'
-
-
-    - name: Change /etc/passwd file ownership, group and permissions
-      ansible.builtin.file:
-        path: /etc/passwd
-        owner: root
-        group: root
-        mode: '0644'
-    - name: Change /etc/group file ownership, group and permissions
-      ansible.builtin.file:
-        path: /etc/group
-        owner: root
-        group: root
-        mode: '0644'
-    - name: Change /etc/shadow file ownership, group and permissions
-      ansible.builtin.file:
-        path: /etc/shadow
-        owner: root
-        group: root
-        mode: '0600'
-    - name: Change /etc/gshadow file ownership, group and permissions
-      ansible.builtin.file:
-        path: /etc/gshadow
         owner: root
         group: root
         mode: '0600'
