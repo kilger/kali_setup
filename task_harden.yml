@@ -1,9 +1,9 @@
 ---
-- hosts: localhost
+- name: User setup
+  hosts: localhost
   connection: local
   become: true
-  gather_facts: true
-  
+  gather_facts: false
   tasks:
   
     - name: Change /etc/fstab file ownership, group and permissions
