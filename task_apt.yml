@@ -16,6 +16,7 @@
         pkg:
         - apt-file
         - apt-transport-https
+        - autossh
         - bleachbit
         #- bum NA
         - chromium
