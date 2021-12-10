@@ -61,6 +61,7 @@
         - libreoffice-calc
         - libreoffice-gnome 
         - libreoffice-writer 
+        - lua5.3
         - metagoofil 
         - nbtscan
         - netcat-openbsd 
