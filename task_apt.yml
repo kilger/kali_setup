@@ -11,6 +11,16 @@
       apt:
         update_cache: yes
         cache_valid_time: 3600
+
+    - name: uninstall a list of packages
+      apt:
+        name: "{{ packages }}"
+        state: absent
+      vars:
+        packages:
+        - libproxychains3
+        - proxychains
+
     - name: Install a list of packages
       apt:
         pkg:
@@ -76,8 +86,10 @@
         - passing-the-hash
         #- powershell
         - preload
+        - proxychains4
         - python3-pip
         - redis-tools
+        - rdesktop
         - rlwrap
         - rsync
         - scrub
