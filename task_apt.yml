@@ -87,6 +87,7 @@
         #- powershell
         - preload
         - proxychains4
+        - pure-ftpd
         - python3-pip
         - redis-tools
         - rdesktop
