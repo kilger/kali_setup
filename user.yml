@@ -13,6 +13,12 @@
 #      private: yes
   tasks:
 
+    - name: Ensure group "docker & kali-trusted" exists
+      ansible.builtin.group:
+        name: docker,kali-trusted
+        state: present
+
+
     - name: add {{ name_user }} SSH key
       user:
         name: '{{ name_user }}'
