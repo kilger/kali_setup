@@ -11,7 +11,7 @@
 #    - name: user_password
 #      prompt: "And the password is?"
 #      private: yes
-  taks:
+  tasks:
 
     - name: add {{ name_user }} SSH key
       user:
