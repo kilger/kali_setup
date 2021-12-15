@@ -54,6 +54,7 @@
         - gedit
         - gimp
         - git-all
+        - golang
         - grc
 #docker        - gnupg-agent
         #- gnome-do NA
@@ -74,6 +75,7 @@
         - lua5.3
         - metagoofil 
         - nbtscan
+        - neofetch
         - netcat-openbsd 
         - net-tools
         - netfilter-persistent
