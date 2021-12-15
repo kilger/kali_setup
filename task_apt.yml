@@ -36,6 +36,7 @@
         #- code        #requires repo and key be installed first
        #docker        - ca-certificates
         - curl
+        - docker.io
         - dnsutils  
         - ecryptfs-utils
         - exif 
