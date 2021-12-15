@@ -23,7 +23,7 @@
       user:
         name: '{{ name_user }}'
 #        password: '{{ user_password }}'
-        groups: sudo,docker
+        groups: sudo,docker,kali-trusted
         shell: /bin/bash
         generate_ssh_key: yes
         ssh_key_bits: 2048
