@@ -74,6 +74,7 @@
         - libreoffice-gnome 
         - libreoffice-writer 
         - lua5.3
+        - lnav
         - metagoofil 
         - multitail
         - nbtscan
