@@ -70,7 +70,7 @@
         - jq
         - kali-grant-root
         - knockd
-        - kwartz-client
+       # - kwartz-client
         - libreoffice-calc
         - libreoffice-gnome 
         - libreoffice-writer 
