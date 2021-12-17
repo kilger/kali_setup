@@ -103,7 +103,8 @@
         - sshfs
         #- sipvicious
         - smbclient 
-        - smbmap 
+        - smbmap
+        - smbmount
         - snmp 
      #docker- software-properties-common
         #- software-center NA
