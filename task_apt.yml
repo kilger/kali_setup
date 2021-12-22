@@ -102,6 +102,7 @@
         - rlwrap
         - rsync
         - scrub
+        - seclists
         #- shutter NA
         - sshfs
         #- sipvicious
