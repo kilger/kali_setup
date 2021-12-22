@@ -44,6 +44,7 @@
         - exfat-fuse 
         - exfat-utils
         - fail2ban
+        - feroxbuster
         - figlet
         - filezilla
         - filezilla-common
