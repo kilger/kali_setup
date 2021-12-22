@@ -43,6 +43,7 @@
         - exiv2 
         - exfat-fuse 
         - exfat-utils
+        - exploitdb
         - fail2ban
         - feroxbuster
         - figlet
