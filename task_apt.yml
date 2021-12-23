@@ -52,7 +52,7 @@
         - fonts-firacode
         - fonts-noto-color-emoji
       #  - flashplugin-nonfree
-       # - feroxbuster
+        - feroxbuster
         - gdebi
         - gedit
         - gimp
@@ -61,7 +61,7 @@
         - grc
 #docker        - gnupg-agent
         #- gnome-do NA
-        #- impacket-scripts
+        - impacket-scripts
        # - icedtea-plugin
         - iperf3
         - html2text
@@ -93,7 +93,7 @@
         - pandoc
         - passing-the-hash
         - python3-pip
-        #- powershell
+        - powershell
         - preload
         - proxychains4
         - pure-ftpd
