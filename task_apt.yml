@@ -92,6 +92,7 @@
         #- oscanner 
         - pandoc
         - passing-the-hash
+        - python3-pip
         #- powershell
         - preload
         - proxychains4
