@@ -131,6 +131,7 @@
         - whois
         - wkhtmltopdf
         - wireshark
+        - veil
         - vncsnapshot
         - xdotool
         - xfce4-screenshooter
