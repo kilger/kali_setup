@@ -24,6 +24,7 @@
     - name: Install a list of packages
       apt:
         pkg:
+        - amass
         - apt-file
         - apt-transport-https
         - autossh
