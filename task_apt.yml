@@ -27,6 +27,7 @@
         - amass
         - apt-file
         - apt-transport-https
+        - assetfinder
         - autossh
         - bleachbit
         #- bum NA
