@@ -71,6 +71,7 @@
         - iptables
         - iptables-persistent
         #- iptables-services #centos only
+        - joplin
         - jq
         - kali-grant-root
         - knockd
@@ -135,7 +136,7 @@
         - wkhtmltopdf
         - wireshark
         - veil
-        - vncsnapshot
+       # - vncsnapshot
         - xdotool
         - xfce4-screenshooter
         
