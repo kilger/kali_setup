@@ -39,6 +39,7 @@
        #docker        - ca-certificates
         - curl
         - docker.io
+        - dnsrecon
         - dnsutils  
         - ecryptfs-utils
         - exif 
@@ -55,10 +56,12 @@
         - fonts-noto-color-emoji
       #  - flashplugin-nonfree
         - feroxbuster
+        - ffuf
         - gdebi
         - gedit
         - gimp
         - git-all
+        - gobuster
         - golang
         - grc
 #docker        - gnupg-agent
@@ -117,7 +120,7 @@
      #docker- software-properties-common
         #- software-center NA
         - sshpass
-        #- sslscan
+        - sslscan
         - sudo
         - syncthing
         - synaptic
@@ -135,6 +138,7 @@
         - whois
         - wkhtmltopdf
         - wireshark
+        - wpscan
         - veil
        # - vncsnapshot
         - xdotool
