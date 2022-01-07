@@ -33,6 +33,7 @@
         #- bum NA
         - chromium
         - cifs-utils 
+        - cntlm
         #- creddump
         - cryptsetup
         #- code        #requires repo and key be installed first
@@ -47,6 +48,7 @@
         - exfat-fuse 
         - exfat-utils
         - exploitdb
+        - exploitdb-bin-sploits
         - fail2ban
         - feroxbuster
         - figlet
@@ -85,6 +87,7 @@
         - libreoffice-writer 
         - lua5.3
         - lnav
+        - logcheck
         - metagoofil 
         - multitail
         - nbtscan
@@ -104,7 +107,7 @@
         - preload
         - proxychains4
         - pure-ftpd
-        #- python3-httpx
+        - python3-httpx
         - python3-pip
         - redis-tools
         - rdesktop
@@ -122,6 +125,7 @@
         #- software-center NA
         - sshpass
         - sslscan
+        - subfinder
         - sudo
         - syncthing
         - synaptic
@@ -132,6 +136,7 @@
         - tmuxp
         - tnscmd10g
         - tor
+        - tripwire
         - ufw
         - vim
         - vnstat
