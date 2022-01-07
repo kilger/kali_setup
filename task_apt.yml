@@ -30,6 +30,7 @@
         - assetfinder
         - autossh
         - bleachbit
+        - brutespray
         #- bum NA
         - chromium
         - cifs-utils 
