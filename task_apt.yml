@@ -33,7 +33,7 @@
         #- bum NA
         - chromium
         - cifs-utils 
-        - cntlm
+        #- cntlm
         #- creddump
         - cryptsetup
         #- code        #requires repo and key be installed first
