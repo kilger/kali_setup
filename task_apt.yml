@@ -79,6 +79,7 @@
         - kali-grant-root
         - knockd
        # - kwartz-client
+        - kwrite
         - libreoffice-calc
         - libreoffice-gnome 
         - libreoffice-writer 
