@@ -276,6 +276,11 @@
         repo: https://github.com/PenturaLabs/Linux_Exploit_Suggester
         dest: /opt/Linux_Exploit_Suggester
         update: yes
+    - name: get linux-exploit-suggester-2
+      git:
+        repo: https://github.com/jondonas/linux-exploit-suggester-2  
+        dest: /opt/linux-exploit-suggester-2
+        update: yes        
     - name: get linuxprivchecker
       git:
         repo: https://github.com/sleventyeleven/linuxprivchecker
