@@ -1,4 +1,3 @@
-#6:38
 ---
 - name: Software Install
   hosts: localhost
@@ -170,6 +169,12 @@
         repo: https://github.com/unode/firefox_decrypt
         dest: /opt/firefox_decrypt
         update: yes
+    - name: get frogy
+      git:
+        repo: https://github.com/iamthefrogy/frogy
+        dest: /opt/frogy
+        update: yes
+
 
 #G:
     - name: get gau
