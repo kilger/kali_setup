@@ -372,8 +372,23 @@
         update: yes
 
 #O:
+    - name: get OSCP-Exam-Report-Template-Markdown
+      git:
+        repo: https://github.com/noraj/OSCP-Exam-Report-Template-Markdown
+        dest: /opt/OSCP-Exam-Report-Template-Markdown
+        update: yes
+    - name: get Osmedeus
+      git:
+        repo: https://github.com/j3ssie/Osmedeus
+        dest: /opt/Osmedeus
+        update: yes
 
 #P:
+    - name: get pandoc-latex-template
+      git:    
+        repo: https://github.com/Wandmalfarbe/pandoc-latex-template
+        dest: /opt/pandoc-latex-template
+        update: yes
     - name: get peda
       git:
         repo: https://github.com/longld/peda
