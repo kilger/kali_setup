@@ -1,5 +1,5 @@
 ---
-- name: Software Install
+- name: Github cloning
   hosts: localhost
   connection: local
   become: true
@@ -389,6 +389,11 @@
         repo: https://github.com/Wandmalfarbe/pandoc-latex-template
         dest: /opt/pandoc-latex-template
         update: yes
+    - name: get patator
+      git:    
+        repo: https://github.com/lanjelot/patator
+        dest: /opt/patator
+        update: yes        
     - name: get peda
       git:
         repo: https://github.com/longld/peda
