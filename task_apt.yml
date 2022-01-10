@@ -121,6 +121,7 @@
         - sipvicious
         - smbclient 
         - smbmap
+        - smtp-user-enum
         - snmp 
      #docker- software-properties-common
         #- software-center NA
