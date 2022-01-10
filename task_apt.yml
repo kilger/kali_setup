@@ -146,6 +146,7 @@
         - wkhtmltopdf
         - wireshark
         - wpscan
+        - unicornscan
         - veil
        # - vncsnapshot
         - xdotool
