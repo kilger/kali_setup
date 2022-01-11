@@ -83,6 +83,7 @@
         - knockd
        # - kwartz-client
         - kwrite
+        - libimage-exiftool-perl
         - libreoffice-calc
         - libreoffice-gnome 
         - libreoffice-writer 
