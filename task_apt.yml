@@ -28,6 +28,7 @@
         - apt-file
         - apt-transport-https
         - assetfinder
+        - axel
         - autossh
         - bleachbit
         - brutespray
