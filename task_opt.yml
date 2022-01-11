@@ -571,7 +571,11 @@
         repo: https://github.com/dievus/threader3000
         dest: /opt/threader3000
         update: yes
-
+    - name: get twint
+      git:
+        repo: https://github.com/twintproject/twint
+        dest: /opt/twint
+        update: yes
 
 #U:
     - name: get unfurl
