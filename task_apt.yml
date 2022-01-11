@@ -91,6 +91,7 @@
         - lua5.3
         - lnav
         - logcheck
+        - masscan
         - metagoofil 
         - multitail
         - nbtscan
