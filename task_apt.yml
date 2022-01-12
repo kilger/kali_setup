@@ -92,7 +92,8 @@
         - lnav
         - logcheck
         - masscan
-        - metagoofil 
+        - metagoofil
+        - medusa
         - multitail
         - nbtscan
         - neofetch
