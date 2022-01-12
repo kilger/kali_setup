@@ -45,6 +45,15 @@
          owner: '{{ name_user }}'
          group: '{{ name_user }}'
          mode: '0700' 
+         
+    - name: Create ~/bin for {{ name_user }}
+      ansible.builtin.file:
+         path: /home/{{ name_user }}/bin
+         state: touch
+         owner: '{{ name_user }}'
+         group: '{{ name_user }}'
+         mode: '0700'          
+         
     - name: Ansible Insert multiple lines using blockinfile
       blockinfile:
         dest: /home/{{ name_user }}/.inputrc
