@@ -389,6 +389,11 @@
         repo: https://github.com/Wandmalfarbe/pandoc-latex-template
         dest: /opt/pandoc-latex-template
         update: yes
+    - name: get parsenmap
+      git:    
+        repo: https://github.com/R3dy/parsenmap
+        dest: /opt/parsenmap
+        update: yes
     - name: get patator
       git:    
         repo: https://github.com/lanjelot/patator
