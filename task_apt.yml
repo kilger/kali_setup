@@ -37,6 +37,7 @@
         - cifs-utils 
         #- cntlm
         #- creddump
+        - crowbar
         - cryptsetup
         #- code        #requires repo and key be installed first
        #docker        - ca-certificates
