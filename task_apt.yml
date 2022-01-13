@@ -35,6 +35,7 @@
         #- bum NA
         - chromium
         - cifs-utils 
+        - cme
         #- cntlm
         #- creddump
         - crowbar
