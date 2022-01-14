@@ -137,6 +137,11 @@
         repo: https://github.com/cddmp/enum4linux-ng
         dest: /opt/enum4linux-ng
         update: yes
+    - name: get evil-winrm
+      git:
+        repo: https://github.com/Hackplayers/evil-winrm
+        dest: /opt/evil-winrm
+        update: yes
     - name: get evilportals
       git:
         repo: https://github.com/kbeflo/evilportals
