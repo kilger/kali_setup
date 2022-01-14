@@ -109,6 +109,7 @@
         - oscanner 
         - pandoc
         - passing-the-hash
+        - photon
         - python3-pip
         - powershell
         - preload
