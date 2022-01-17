@@ -492,6 +492,11 @@
         repo: https://github.com/Spiderlabs/Responder
         dest: /opt/Responder
         update: yes
+    - name: get rlwrap
+      git:
+        repo: https://github.com/hanslub42/rlwrap
+        dest: /opt/rlwrap
+        update: yes
     - name: get rmiscout
       git: 
         repo: https://github.com/BishopFox/rmiscout
