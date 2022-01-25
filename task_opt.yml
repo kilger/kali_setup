@@ -271,6 +271,11 @@
         repo: https://github.com/nahamsec/lazyrecon
         dest: /opt/lazyrecon
         update: yes
+    - name: get legion
+      git:
+        repo: https://github.com/carlospolop/legion
+        dest: /opt/legion
+        update: yes
     - name: get LinEnum rebootuser
       git:
         repo: https://github.com/rebootuser/LinEnum
