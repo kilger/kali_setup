@@ -605,6 +605,11 @@
         update: yes
 
 #V:
+    - name: get vscan
+      git:
+        repo: https://github.com/xen0vas/vscan
+        dest: /opt/vscan
+        update: yes
 
 #W:
     - name: get waybackurls
