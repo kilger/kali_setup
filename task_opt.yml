@@ -356,6 +356,7 @@
         dest: /usr/share/wordlists/nerdlist
         update: yes
     - name: get nishang
+      git:
         repo: https://github.com/samratashok/nishang
         dest: /opt/nishang
         update: yes
