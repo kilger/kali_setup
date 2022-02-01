@@ -632,6 +632,11 @@
         repo: https://github.com/bitsadmin/wesng
         dest: /opt/wesng
         update: yes
+    - name: get Windows-Exploit-Suggester
+      git:
+        repo: https://github.com/AonCyberLabs/Windows-Exploit-Suggester
+        dest: /opt/Windows-Exploit-Suggester
+        update: yes            
     - name: get winPEAS
       git:
         repo: https://github.com/carlospolop/PEASS-ng
