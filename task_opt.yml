@@ -313,6 +313,11 @@
         repo: https://github.com/pry0cc/mapper
         dest: /opt/mapper
         update: yes
+    - name: get masscan
+      git:
+        repo: https://github.com/robertdavidgraham/masscan
+        dest: /opt/masscan
+        update: yes        
     - name: get massdns
       git:
         repo: https://github.com/blechschmidt/massdns
