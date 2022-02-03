@@ -119,6 +119,7 @@
         - python3-pip
         - redis-tools
         - rdesktop
+        - rinetd
         - rlwrap
         - rsync
         - scrub
