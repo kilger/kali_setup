@@ -132,6 +132,11 @@
         repo: https://github.com/KALILINUXTRICKSYT/easysploit
         dest: /opt/easysploit
         update: yes
+    - name: get Empire
+      git:
+        repo: https://github.com/PowerShellEmpire/Empire
+        dest: /opt/Empire
+        update: yes        
     - name: get enum4linux-ng
       git:
         repo: https://github.com/cddmp/enum4linux-ng
