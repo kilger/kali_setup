@@ -77,6 +77,7 @@
         - iperf3
         - html2text
         - htop
+        - httptunnel
         - iptables
         - iptables-persistent
         #- iptables-services #centos only
