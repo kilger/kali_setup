@@ -542,7 +542,8 @@
     - name: get SecLists
       git:
         repo: https://github.com/danielmiessler/SecLists
-        dest: /usr/share/wordlists/SecLists
+        dest: /opt/SecLists        
+#        dest: /usr/share/wordlists/SecLists
         update: yes
     - name: get SecUtils clean_wordlist
       git: 
