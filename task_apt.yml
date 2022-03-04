@@ -108,6 +108,7 @@
         - netfilter-persistent
         - nikto
         - nmap
+        - nuclei
         - onesixtyone
         - openvpn
         - oscanner 
