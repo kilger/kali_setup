@@ -139,6 +139,7 @@
      #docker- software-properties-common
         #- software-center NA
         - sshpass
+        - sshrc
         - sslscan
         - subfinder
         - sudo
