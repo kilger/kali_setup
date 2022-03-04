@@ -378,7 +378,7 @@
     - name: get nmapAutomator
       git:
         repo: https://github.com/21y4d/nmapAutomator
-        dest: /opt/<repo>
+        dest: /opt/nmapAutomator
         update: yes
     - name: get nmap-vulners
       git:
