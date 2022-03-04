@@ -44,6 +44,7 @@
        #docker        - ca-certificates
         - curl
         - docker.io
+        - dnsmasq
         - dnsrecon
         - dnsutils  
         - ecryptfs-utils
