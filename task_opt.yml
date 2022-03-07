@@ -104,6 +104,11 @@
         update: yes
 
 #D:
+    - name: get dirble
+      git:
+        repo: https://github.com/nccgroup/dirble
+        dest: /opt/nccgroup/dirble
+        update: yes
     - name: get dirsearch
       git:
         repo: https://github.com/maurosoria/dirsearch
