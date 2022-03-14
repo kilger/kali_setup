@@ -65,6 +65,7 @@
         - feroxbuster
         - ffmpeg
         - ffuf
+        - geomview #for clip
         - gdebi
         - gedit
         - gimp
