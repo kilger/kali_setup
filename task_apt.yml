@@ -55,6 +55,7 @@
         - exploitdb
         - exploitdb-bin-sploits
         - fail2ban
+        - fcrackzip
         - feroxbuster
         - figlet
         - filezilla
