@@ -65,7 +65,7 @@
         - feroxbuster
         - ffmpeg
         - ffuf
-        - geomview #for clip
+       # - geomview #for clip
         - gdebi
         - gedit
         - gimp
@@ -167,6 +167,7 @@
         - unicornscan
         - veil
        # - vncsnapshot
+        - xclip
         - xdotool
         - xfce4-screenshooter
         - xmlstarlet
