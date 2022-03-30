@@ -276,6 +276,11 @@
 #K:
 
 #L:
+    - name: get LaZagne
+      git:
+        repo: https://github.com/AlessandroZ/LaZagne
+        dest: /opt/LaZagne
+        update: yes
     - name: get lazyrecon
       git:
         repo: https://github.com/nahamsec/lazyrecon
