@@ -31,6 +31,7 @@
         - axel
         - autossh
         - bleachbit
+        - bloodhound
         - brutespray
         #- bum NA
         - chromium
@@ -104,6 +105,7 @@
         - mingw-w64
         - multitail
         - nbtscan
+        - neo4j
         - neofetch
         - netcat-openbsd 
         - net-tools
