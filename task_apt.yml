@@ -77,17 +77,18 @@
         - grc
 #docker        - gnupg-agent
         #- gnome-do NA
-        - impacket-scripts
-       # - icedtea-plugin
-        - iperf3
         - html2text
         - htop
         - httptunnel
+        - impacket-scripts
+       # - icedtea-plugin
+        - iperf3
         - iptables
         - iptables-persistent
         #- iptables-services #centos only
         - joplin
         - jq
+        - jxplorer
         - kali-grant-root
         - knockd
        # - kwartz-client
