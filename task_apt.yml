@@ -116,6 +116,7 @@
         - ntpsec-ntpdate
         - nuclei
         - onesixtyone
+        - open-iscsi
         - openvpn
         - oscanner 
         - pandoc
