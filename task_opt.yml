@@ -585,6 +585,11 @@
         repo: https://github.com/aboul3la/Sublist3r
         dest: /opt/Sublist3r
         update: yes
+    - name: get subbrute
+      git:
+        repo: https://github.com/TheRook/subbrute
+        dest: /opt/subbrute
+        update: yes
     - name: get SUID3NUM
       git:
         repo: https://github.com/Anon-Exploiter/SUID3NUM
