@@ -164,6 +164,7 @@
         - tor
         - tripwire
         - ufw
+        - uniscan
         - vim
         - vnstat
         - whatweb
