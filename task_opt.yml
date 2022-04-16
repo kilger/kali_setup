@@ -433,6 +433,11 @@
       git:    
         repo: https://github.com/lanjelot/patator
         dest: /opt/patator
+        update: yes     
+    - name: get petereport
+      git:
+        repo: https://github.com/1modm/petereport
+        dest: /opt/petereport
         update: yes        
     - name: get peda
       git:
