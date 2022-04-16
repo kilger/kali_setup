@@ -172,6 +172,8 @@
         - wkhtmltopdf
         - wireshark
         - wpscan
+        - ufw
+        - uniscan
         - unicornscan
         - veil
        # - vncsnapshot
