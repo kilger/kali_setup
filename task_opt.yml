@@ -82,6 +82,11 @@
         repo: https://github.com/digininja/CeWL
         dest: /opt/CeWL
         update: yes
+    - name: get cli
+      git:
+        repo: https://github.com/ipinfo/cli
+        dest: /opt/cli
+        update: yes        
     - name: get CloudBrute
       git:
         repo: https://github.com/jhaddix/CloudBrute
@@ -114,7 +119,6 @@
         repo: https://github.com/maurosoria/dirsearch
         dest: /opt/dirsearch
         update: yes
-
     - name: get discover
       git:
         repo: https://github.com/leebaird/discover
@@ -125,6 +129,11 @@
         repo: https://github.com/wangoloj/dnsdumpster
         dest: /opt/dnsdumpster
         update: yes
+    - name: get dnsx
+      git: 
+        repo: https://github.com/projectdiscovery/dnsx
+        dest: /opt/dnsx
+        update: yes        
     - name: get duplicut
       git: 
         repo: https://github.com/nil0x42/duplicut
@@ -585,6 +594,11 @@
         repo: https://github.com/emadshanab/Subdomains-brutforce-wordlists-collection
         dest: /usr/share/wordlists/Subdomains-brutforce-wordlists-collection
         update: yes
+    - name: get subfinder
+      git:
+        repo: https://github.com/projectdiscovery/subfinder
+        dest: /opt/subfinder
+        update: yes        
     - name: get Sublist3r
       git:
         repo: https://github.com/aboul3la/Sublist3r
