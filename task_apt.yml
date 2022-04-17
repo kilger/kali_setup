@@ -146,6 +146,7 @@
         - smbmap
         - smtp-user-enum
         - snmp 
+        - spray
      #docker- software-properties-common
         #- software-center NA
         - sshpass
