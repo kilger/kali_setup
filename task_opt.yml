@@ -682,6 +682,11 @@
         repo: https://github.com/bitsadmin/wesng
         dest: /opt/wesng
         update: yes
+    - name: get windapsearch
+      git:
+        arepo: https://github.com/ropnop/windapsearchwindapsearch
+        dest: /opt/windapsearch
+        update: yes
     - name: get Windows-Exploit-Suggester
       git:
         repo: https://github.com/AonCyberLabs/Windows-Exploit-Suggester
