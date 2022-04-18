@@ -23,6 +23,11 @@
         
 #ver 2021/11/19.0
 #A:
+    - name: get admin-finder
+      git:
+        repo: https://github.com/the-robot/admin-finder
+        dest: /opt/admin-finder
+        update: yes
     - name: get aquatone
       git:
         repo: https://github.com/michenriksen/aquatone
