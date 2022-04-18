@@ -684,7 +684,7 @@
         update: yes
     - name: get windapsearch
       git:
-        arepo: https://github.com/ropnop/windapsearchwindapsearch
+        arepo: https://github.com/ropnop/windapsearch
         dest: /opt/windapsearch
         update: yes
     - name: get Windows-Exploit-Suggester
