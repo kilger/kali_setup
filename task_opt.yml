@@ -216,6 +216,11 @@
         repo: https://github.com/gwen001/github-search
         dest: /opt/github-search
         update: yes
+    - name: get go-windapsearch
+      git:
+        repo: https://github.com/ropnop/go-windapsearch
+        dest: /opt/go-windapsearch
+        update: yes        
     - name: get gospider
       git:
         repo: https://github.com/jaeles-project/gospider
