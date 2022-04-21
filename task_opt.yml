@@ -87,6 +87,11 @@
         repo: https://github.com/digininja/CeWL
         dest: /opt/CeWL
         update: yes
+    - name: get ciscobruter
+      git:
+        repo: https://github.com/r3dy/ciscobruter
+        dest: /opt/ciscobruter
+        update: yes        
     - name: get cli
       git:
         repo: https://github.com/ipinfo/cli
