@@ -382,6 +382,11 @@
         repo: https://github.com/huntergregal/mimipenguin
         dest: /opt/mimipenguin
         update: yes
+    - name: get mimiDbg
+      git:
+        repo: https://github.com/giMini/mimiDbg
+        dest: /opt/mimiDbg
+        update: yes        
     - name: get mitm6
       git:
         repo: https://github.com/fox-it/mitm6
