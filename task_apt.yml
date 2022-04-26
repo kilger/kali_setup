@@ -154,6 +154,7 @@
        # - sshrc #requires additional repo
         - sslscan
         - subfinder
+        - sublist3r
         - sudo
         - syncthing
         - synaptic
