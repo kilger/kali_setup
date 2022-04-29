@@ -325,6 +325,11 @@
         repo: https://github.com/Z3R0th-13/LinEnum
         dest: /opt/LinEnum_Z3R0th-13
         update: yes
+    - name: get LinkedInt
+      git:
+        repo: https://github.com/mdsecactivebreach/LinkedInt
+        dest: /opt/LinkedInt
+        update: yes        
     - name: get Linux_Exploit_Suggester
       git:
         repo: https://github.com/PenturaLabs/Linux_Exploit_Suggester
