@@ -119,6 +119,11 @@
         update: yes
 
 #D:
+    - name: get degoogle_hunter
+      git:
+        repo: https://six2dez/degoogle_hunter
+        dest: /opt/degoogle_hunter
+        update: yes
     - name: get dirble
       git:
         repo: https://github.com/nccgroup/dirble
