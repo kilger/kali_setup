@@ -678,6 +678,11 @@
         update: yes
 
 #U:
+    - name: get uDork
+      git:
+        repo: https://github.com/m3n0sd0n4ld/uDork
+        dest: /opt/uDork
+        update: yes
     - name: get unfurl
       git:
         repo: https://github.com/tomnomnom/unfurl
