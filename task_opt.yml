@@ -726,7 +726,12 @@
       git:
         repo: https://github.com/AonCyberLabs/Windows-Exploit-Suggester
         dest: /opt/Windows-Exploit-Suggester
-        update: yes            
+        update: yes 
+    - name: get windows-kernel-exploits
+      git:
+        repo: https://github.com/SecWiki/windows-kernel-exploits
+        dest: /opt/windows-kernel-exploits
+        update: yes
     - name: get winPEAS
       git:
         repo: https://github.com/carlospolop/PEASS-ng
