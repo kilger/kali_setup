@@ -609,6 +609,11 @@
         repo: https://github.com/sherlock-project/sherlock
         dest: /opt/sherlock
         update: yes
+    - name: get Sn1per
+      git:
+        repo: https://github.com/1N3/Sn1per
+        dest: /opt/Sn1per
+        update: yes
     - name: get spoofcheck
       git:
         repo: https://github.com/BishopFox/spoofcheck
