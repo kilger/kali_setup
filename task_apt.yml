@@ -53,7 +53,7 @@
         - exif 
         - exiv2 
         - exfat-fuse 
-        - exfat-utils
+        #- exfat-utils
         - exploitdb
         - exploitdb-bin-sploits
         - fail2ban
