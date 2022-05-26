@@ -55,6 +55,7 @@
         - exfat-fuse 
         #- exfat-utils
         - exploitdb
+        - exploitdb-papers
         - exploitdb-bin-sploits
         - fail2ban
         - fcrackzip
