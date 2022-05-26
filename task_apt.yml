@@ -124,6 +124,7 @@
         - pandoc
         - passing-the-hash
         - photon
+        - pipx
         - python3-pip
         - poppler-utils
         - powershell
