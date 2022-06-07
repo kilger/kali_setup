@@ -350,6 +350,11 @@
         repo: https://github.com/sleventyeleven/linuxprivchecker
         dest: /opt/linuxprivchecker
         update: yes
+    - name: get Lovely-Potato
+      git:
+        repo: https://github.com/TsukiCTF/Lovely-Potato
+        dest: /opt/Lovely-Potato
+        update: yes
 
 #M:
     - name: get MANSPIDER
