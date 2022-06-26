@@ -23,6 +23,11 @@
         
 #ver 2021/11/19.0
 #A:
+    - name: get A-Red-Teamer-diaries
+      git:
+        repo: https://github.com/ihebski/A-Red-Teamer-diaries
+        dest: /opt/A-Red-Teamer-diaries
+        update: yes
     - name: get admin-finder
       git:
         repo: https://github.com/the-robot/admin-finder
