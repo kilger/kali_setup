@@ -140,6 +140,7 @@
         - rinetd
         - ripgrep
         - rlwrap
+        - rusers
         - rsync
         - scrub
         - seclists
