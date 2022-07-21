@@ -157,6 +157,7 @@
         #- software-center NA
         - sshpass
        # - sshrc #requires additional repo
+        - sshuttle
         - sslscan
         - subfinder
         - sublist3r
