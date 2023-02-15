@@ -33,11 +33,10 @@
         repo: https://github.com/the-robot/admin-finder
         dest: /opt/admin-finder
         update: yes
-    - name: get aquatone
-      git:
-        repo: https://github.com/michenriksen/aquatone
-        dest: /opt/aquatone
-        update: yes
+#    - name: get aquatone
+#      git:
+#        repo: https://github.com/michenriksen/aquatone
+#        dest: /opt/aquatone
     - name: get asn
       git:
         repo: https://github.com/nitefood/asn
