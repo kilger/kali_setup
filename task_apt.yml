@@ -88,7 +88,7 @@
         - iptables
         - iptables-persistent
         #- iptables-services #centos only
-        - joplin
+        #- joplin
         - jq
         - jxplorer
         - kali-grant-root
